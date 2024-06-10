@@ -84,7 +84,7 @@ This is the distilled essence of my experience learning numerous programming lan
 
 - **Analyze the Documents:** Look into how code files are structured. Identify standard conventions for file naming, organization, and extension.
   - **White-Space Sensitivity:** Determine if the language is white-space sensitive (e.g., Python) or if it relies on other delimiters like semicolons or brackets.
-  - **Block Structures:** Check if brackets `{}` or other symbols define code blocks and how these structures impact the code flow.
+  - **Block Structures:** Check if braces `{}` or other symbols define code blocks and how these structures impact the code flow.
   - **Code Initiation and Termination:** Understand if the code starts or ends with specific keywords or characters.
   - **Comments:** Learn how to write single-line comments (e.g., `//` in JavaScript) and multi-line comments (e.g., `/* */` in C/C++), and if in-line comments are supported.
   - **Special Commands:** Identify if there are any special commands or annotations for the IDE or build tools, such as `#pragma` in C/C++.
@@ -105,7 +105,7 @@ This is the distilled essence of my experience learning numerous programming lan
 
 #### Declaration and Initialization
 
-- **Practice Declaration:** Try declaring variables without initializing them first. For example, `int x;` in C. What happens if you use the variable without initialization? How does your language handle uninitialized variables?
+- **Practice Declaration:** Try declaring variables without initializing them first. For example, `int x;` in C. Is declaration necessary in your language and can that be changed? What happens if you use the variable without initialization? How does your language handle uninitialized variables?
 - **Initialize Variables:** Next, practice initializing variables separately, like `x = 10;`. Check how your language handles initialization. Are there default values assigned if not explicitly initialized?
 - **Combine Both:** Combine declaration and initialization in a single step, such as `int y = 20;`. Are there languages where this is not possible? Explore why and how to work around it.
 
@@ -497,7 +497,7 @@ Explore how these types are used in your language and write examples to see thei
 
 #### Return Context
 
-- **Different Return Values:** Explore if your language supports different return values depending on the calling context. Write examples to see how the return context can affect function outputs.
+- **Different Return Values:** Explore if your language supports different return values depending on the calling context (e.g., `wantarray` in Perl). Write examples to see how the return context can affect function outputs.
 
 ### Recursion: Diving into Self-Referential Code
 
@@ -809,6 +809,7 @@ Explore how these types are used in your language and write examples to see thei
 #### Single Projects
 
 - **Calculator Project:** Begin by implementing basic operations such as addition, subtraction, multiplication, and division. Enhance your calculator by handling invalid input and supporting more complex expressions. This project reinforces your understanding of basic syntax and logic.
+- **Meta-Information:** Learn how to set author, description and copyright information for your executable.
 
 #### Multi-Interdependent Projects
 
@@ -923,272 +924,260 @@ Explore how these types are used in your language and write examples to see thei
 
 ### Networking: Bridging Digital Realms
 
-text data / text streams
+#### Text Data/Streams
 
-  - client/server, encodings, line-breaks
+- **Client/Server Communication:** Research how to handle text data in client/server communication. Understand different encodings and line-break handling. Implement a project that transfers text data between a client and server.
 
-binary data / network streams
+#### Binary Data/Streams
 
-  - (de-)serialization, checksums
+- **Serialization and Deserialization:** Explore how to serialize and deserialize binary data and data structures. Learn about checksums for data integrity and how to encapsulate larger data into packets. Write examples to implement binary data transfer with error checking.
 
-http requests
+#### HTTP Requests
 
-  - get, post, authentication, compressions, headers, cookies, data uris
+- **Methods and Headers:** Learn about different HTTP methods (GET, POST) and how to use them. Understand headers, cookies, and data URIs. Implement examples to send authenticated HTTP requests with compression.
 
-emails
+#### Emails
 
-  - smtp send, headers, body type, attachments
+- **Sending Emails:** Research how to send emails using SMTP. Understand how to set headers, body types, and attachments. Write examples to send formatted emails with attachments.
 
-xml
+#### XML
 
-  - tags, attributes, dom/sax parsing, events, modification, dtd, encoding, validity
+- **XML Handling:** Learn how to handle XML data, including parsing with DOM/SAX, events, and modifications. Understand tags, attributes, DTD, encoding, and validity. Write examples to manipulate XML documents.
 
-json
+#### JSON
 
-  - type-safe (de-)serialization
+- **JSON Serialization:** Explore type-safe serialization and deserialization of JSON data. Find out what possibilities you have to enable minification or pretty-printing. Write examples to convert data structures to and from JSON format.
 
-custom serialization
+#### Custom Serialization
 
-  - needed interfaces and base classes to derive from
-  - implement e.g. messagepack
-  - circular references
-  - null-values and unset values
-  - versioning
+- **Implementing Serialization:** Research needed interfaces and base classes for custom serialization. Implement serialization using formats like MessagePack. Handle circular references, null values, and type versioning in your implementation.
 
-network utilities
+#### Network Utilities
 
-  - ping, dns, ntp
+- **Common Utilities:** Learn about network utilities like ping, DNS, and NTP. Write examples to use these utilities for network diagnostics and synchronization.
 
-custom protocols
+#### Custom Protocols
 
-  - icmp, igmp, udp
+- **Creating Protocols:** Investigate how to implement custom protocols atop ICMP, IGMP, and UDP. Write examples to create and handle custom network messages.
 
-raw sockets
+#### Raw Sockets
 
-  - handshake, half-open
-  - adapater bindings
-  - packet capturing
+- **Low-Level Networking:** Explore how to use raw sockets for low-level networking. Implement handshakes, half-open connections, research adapter binding, and packet capturing.
 
-databases
+#### Databases
 
-  - mysql, t-sql, nosql, sqlite
-  - adodb, oracle
-  - crud operations
-  - parameters against sql-injections
-  - calling stored procedures and functions
-  - dealing with auto-generated column values like defaults and auto-incrementation
-  - dealing with foreign keys
-  - triggers
-  - collations
-  - number formats, date and time formats
+- **Database Operations:** Learn about different databases (MySQL, T-SQL, NoSQL, SQLite) and their interfaces (ADOdb, Oracle). Write examples to perform CRUD operations, use parameters to prevent SQL injections, call stored procedures, handle auto-generated values (like auto-incrementation, default values and computed columns), and manage foreign keys and triggers.
+- **Advanced Database Topics:** Explore collations, number formats (and type-mapping), and date/time formats in databases. Write examples to handle these aspects correctly in your applications.
 
 ### Cryptography: Let me bury that secret
 
-basics
+#### Basics
 
-  - Kerckhoffs principle
-  - mono-alphabetic substitution, poly-alpha
-  - one-time-pad
-  - block vs stream
-  - symm vs asymm
-  - public vs private key
-  - designs: subst-perm, feistel network, lai-massey
-  - round keys and their generation
+- **Kerckhoffs Principle:** Understand the principle that a cryptographic system should be secure even if everything about the system, except the key, is public knowledge. Research historical and modern examples to see this principle in action.
+- **Substitution Ciphers:** Learn about mono-alphabetic and poly-alphabetic substitution ciphers. Implement simple ciphers to understand their strengths and weaknesses.
+- **One-Time Pad:** Explore the concept of the one-time pad and why it is theoretically unbreakable. Write a program to implement a one-time pad encryption and decryption.
+- **Block vs Stream Ciphers:** Research the differences between block ciphers and stream ciphers. Implement examples of each to understand their use cases and performance characteristics.
+- **Symmetric vs Asymmetric Encryption:** Understand the difference between symmetric and asymmetric encryption. Study examples of each type and implement basic encryption and decryption routines.
+- **Public vs Private Key:** Learn how public and private keys work in asymmetric encryption. Write examples to generate key pairs and use them for secure communication.
+- **Cryptographic Designs:** Investigate different cryptographic designs such as substitution-permutation networks, Feistel networks, and Lai-Massey schemes. Implement basic versions of these designs to see how they structure encryption algorithms.
+- **Round Keys:** Research what round keys are and how they are generated and used in encryption algorithms. Implement a key schedule algorithm to understand this process.
 
-modes of operation
+#### Modes of Operation
 
-  - ecb, cbc, pcbc, cfb, ofb, ctr, gcm, ccm, xts
+- **Cipher Modes:** Learn about different modes of operation like ECB, CBC, PCBC, CFB, OFB, CTR, GCM, CCM, and XTS. Implement these modes to see how they affect encryption and decryption.
+- **Security Implications:** Understand the security implications of each mode. Write examples to demonstrate potential vulnerabilities, such as patterns in ECB mode.
 
-padding
+#### Padding
 
-  - null-bytes and randomization
-  - ansi x9.23, iso 10126, pkcs#5, pkcs#7, iso/iec 7816-4
-  - ciphertext stealing
-  - residual block termination
+- **Padding Techniques:** Explore various padding techniques like null-bytes, randomization, ANSI X9.23, ISO 10126, PKCS#5, PKCS#7, and ISO/IEC 7816-4. Implement these techniques to handle different block sizes.
+- **Ciphertext Stealing:** Learn about ciphertext stealing and how it allows encryption without padding. Write examples to implement this technique.
+- **Residual Block Termination:** Investigate residual block termination and its use in cryptographic systems. Implement examples to understand how it ensures data integrity.
 
-block sizes
+#### Block Sizes
 
-  - blowfish vs aes -> blocksize matters more
+- **Importance of Block Size:** Compare block sizes in different algorithms like Blowfish and AES. Understand why block size matters and how it impacts security and performance.
 
-key lengths
+#### Keys
 
-  - when key size hurts security
+- **Security of Key Lengths:** Research how key length affects security. Understand scenarios where increasing key size may reduce security due to increased attack surface. Write examples to demonstrate secure key management.
 
-initialization vectors
+- **Generation:** Understand different types of key generation and exchange.
 
-  - null and random
-  - storage
-  - siv
+#### Initialization Vectors
 
-algorithms
+- **IV Use and Storage:** Learn about the use of initialization vectors (IVs), both null and random. Understand how IVs are stored and managed. Write examples to implement secure IV handling.
+- **SIV Mode:** Explore Synthetic IV (SIV) mode and its benefits. Implement SIV mode to understand how it enhances security.
 
-  - rijndael/aes
-  - des/3des
-  - blowfish/twofish
-  - idea
-  - serpent, camelia
-  - kuznyechik
-  - anubis/khazad
+#### Algorithms
 
-chaining
+- **AES (Rijndael):** Study the AES algorithm in depth. Implement AES encryption and decryption to understand its structure and operation.
+- **DES/3DES:** Learn about DES and 3DES. Implement these algorithms to understand their strengths and vulnerabilities.
+- **Blowfish/Twofish:** Explore Blowfish and Twofish algorithms. Implement them to see how they compare to other encryption methods.
+- **Other Algorithms:** Investigate other algorithms like IDEA, Serpent, Camellia, Kuznyechik, Anubis and Khazad. Write examples to understand their unique features and use cases.
 
-  - aes -> rsa
+#### Chaining
 
-in-memory
+- **Combining Algorithms:** Learn how to chain encryption algorithms, such as using AES(Twofish) for data encryption and RSA for key exchange. Write examples to implement secure, multi-layered encryption systems.
 
-  - 512 byte blocks, self-re-encryption
+#### In-Memory Encryption
 
-files
+- **Fixed Blocks:** Implement in-memory encryption using fixed 512-byte blocks. Understand the challenges and solutions for handling dynamic data sizes.
+- **Self-Re-Encrypting Objects:** Create self-re-encrypting objects that change their encryption keys based on state changes or timers. Write examples to understand the benefits and implementation challenges.
 
-text
+#### File Encryption
 
-hashing
+- **File Encryption Techniques:** Learn how to encrypt files on disk or other media. Write examples to securely encrypt and decrypt files.
 
-  - md5, sha512, whirlpool, ripemd, streebog
+#### Text Encryption
 
-key derivation
+- **Encrypting Text Streams:** Explore methods to encrypt and decrypt text and text streams in memory. Implement examples to handle different text formats and encoding issues.
 
-- pbkdef2
+#### Hashing
 
-steganography
+- **Hash Functions:** Study one-way cryptographic hash functions like MD5, SHA-512, Whirlpool, RIPEMD, and Streebog. Write examples to generate hashes and understand their use in data integrity and authentication.
 
-- store in png and riff pcm wave
-- robustness
+#### Key Derivation
 
-### Compression: Squeezing tiny bits out
+- **Algorithms:** Learn about the Password-Based Key Derivation Function 2 (PBKDF2) and Argon2. See how it strengthens password security. Implement PBKDF2 to derive encryption keys from passwords.
 
-formats
+- **Iterations:** Explore different iteration counts. Find ways to generate a meaningful value dynamically by using on-the-fly benchmarks. Store the count securely.
 
-- lossy vs lossless
-- rle, huffmann, lz/lzss/lzw/deflate, arithmetic
-- dct vs wavelet
-- psychoacustic and psychovisual models
-- jpg (dct, diagonal re-ordering), mp3 (joining channels, temporal masking), mpeg4 (frame referencing, motion estimation)
+#### Steganography
 
-in-memory
+- **Data Hiding:** Research steganography techniques to hide data in PNG and RIFF PCM wave files. Implement examples to understand the principles of data hiding and its robustness.
 
-- speed vs ratio
+### Compression: Squeezing Tiny Bits Out
 
-files
+#### Formats
 
-- single file (de-)compression
+- **Lossy vs Lossless:** Understand the difference between lossy and lossless compression. Research how each type affects data quality and file size. Write examples to compare and contrast the results of both methods.
+- **Compression Algorithms:** Explore various compression algorithms such as RLE, Huffman, LZ/LZSS/LZW/Deflate, and arithmetic coding. Implement each algorithm to understand their strengths and weaknesses.
+- **DCT vs Wavelet:** Learn about Discrete Cosine Transform (DCT) and wavelet-based compression techniques. Write examples to see how each method processes data differently.
+- **Psychoacoustic and Psychovisual Models:** Investigate how psychoacoustic and psychovisual models improve compression by exploiting human perception. Study examples in audio and image compression.
+- **Specific Formats:**
+  - **JPG:** Understand how JPG uses DCT and diagonal re-ordering for image compression. Implement basic JPG compression to see these techniques in action.
+  - **MP3:** Learn how MP3 compression uses channel joining and temporal masking. Write examples to explore these concepts.
+  - **MPEG4:** Study how MPEG4 uses frame referencing and motion estimation for video compression. Implement simple MPEG4 encoding to understand these techniques.
 
-text
+#### In-Memory Compression
 
-- Burrows–Wheeler transform
-- dictionary sizes
-- probabilistic modelling
+- **Speed vs Ratio:** Research the trade-offs between compression speed and compression ratio. Write examples to test different algorithms and measure their performance in terms of speed and compression efficiency.
 
-archives
+#### File Compression
 
-  - zip, rar, 7zip, tar, gz
-  - in-memory extraction of single files
-  - recursive (de-)compression
-  - modification
-  - filesystem rights
+- **Single File Compression:** Learn how to compress and decompress single files using different algorithms. Implement examples to handle various file types and measure the effectiveness of each compression method.
+
+#### Text Compression
+
+- **Burrows–Wheeler Transform:** Explore the Burrows–Wheeler Transform and how it improves text compression. Write examples to implement this transform and understand its impact on compression ratio.
+- **Dictionary Sizes:** Investigate the importance of dictionary sizes in text compression algorithms. Experiment with different sizes to see their effect on compression efficiency.
+- **Sliding Windows:** Learn about sliding window techniques used in compression algorithms like LZ77. Implement examples to understand how they work.
+- **Probabilistic Modelling:** Study probabilistic modelling and its role in text compression. Write examples to use these models for predicting and compressing text data.
+
+#### Archives
+
+- **Archive Formats:** Explore different archive formats such as ZIP, RAR, 7zip, TAR, and GZ. Write examples to create and extract archives using these formats.
+- **In-Memory Extraction:** Learn how to extract single files from archives in memory. Implement examples to handle archives without writing to disk.
+- **Recursive Compression:** Investigate recursive compression techniques for handling nested archives. Write examples to compress and decompress archives recursively.
+- **Modification:** Study how to modify existing archives, such as adding or removing files. Implement examples to update archives while preserving their structure.
+- **Filesystem Rights:** Understand how filesystem rights are preserved in archives. Write examples to handle permissions and ownership when creating and extracting archives.
 
 ### Lost Topics: Let me find my Wrench inside the Warp-Core
 
-advanced language features
+#### Advanced Language Features
 
-  - decorators, generators, context and state managers
-  - multiple standard libraries
+- **Decorators and Generators:** Explore how decorators and generators work in your language. Implement examples to understand how they enhance functionality and improve code readability. Research common use cases and best practices.
+- **Context and State Managers:** Learn how context and state managers simplify resource management. Write examples to manage database connections, file operations, and other resources using context managers.
+- **Multiple Standard Libraries:** Investigate how to use multiple standard libraries within your projects. Write examples to understand library compatibility and version management.
+- **Rarity:** Explore any rare keyword or concept available in your language and how it might help you.
 
-advanced concepts
+#### Advanced Security
 
-  - side-channels, retpoline
-  - speculative execution and security issues
+- **Side-Channels and Retpoline:** Research side-channel attacks and mitigation techniques like Retpoline. Understand the implications for software security and write examples to implement secure coding practices.
+- **Speculative Execution and Security:** Explore speculative execution and its associated security issues, such as Spectre and Meltdown. Write examples to understand how these vulnerabilities can be exploited and how to mitigate them.
 
-performance optimization
+#### Performance Optimization
 
-  - micro-op -> when and when not, readability issues, criticial sections, 80/20-rule
-  - how to benchmark (warm-up, release vs debug builds, attached debuggers, iteration count, outliers, multi-threading, sys vs user, profiling, synthetic benchmark)
-  - cpu pipelines, stalling, blocking, refilling
-  - superscalar architectures, instruction level parallelism, data dependencies and hazards, register renaming
-  - the cache, cache sizes and levels, associativity, cache thrashing, data locality, prefetching, alignment
-  - branch prediction, static vs dynamic, conditional moving, branch-free-programming, bit hacks
-  - inlining, dead-code elimination, common subexpressions elimination, constant folding and propagation
-  - profile guided optimization, tiered compilation, deoptimization
-  - loop unrolling, fusion and fission, tiling and blocking, invariant code motion
-  - compiler support, attributes, keywords, preprocessor macros
+- **Micro-Optimization:** Learn when to apply micro-optimizations and when to avoid them due to readability issues. Understand the 80/20 rule in the context of performance improvements. Write examples to identify and optimize critical sections and hot-paths.
+- **Benchmarking Techniques:** Research how to benchmark code effectively. Implement benchmarks with proper warm-up, manage release vs. debug builds, handle attached debuggers, choose appropriate iteration counts, manage outliers, and use multi-threading. Understand the difference between system and user time, and use profiling and synthetic benchmarks to measure performance. Find out if there are any packages in your language available to help you.
+- **CPU Pipelines and Stalling:** Investigate CPU pipelines, stalling, blocking, and refilling. Write examples to optimize code execution and reduce pipeline stalls.
+- **Superscalar Architectures:** Explore instruction-level parallelism, data dependencies, hazards, and register renaming. Write examples to take advantage of superscalar architectures.
+- **Cache Optimization:** Understand cache sizes, levels, associativity, and cache thrashing. Write examples to improve data locality, use prefetching, and ensure proper alignment for optimal cache performance.
+- **Branch Prediction:** Learn about static vs. dynamic branch prediction, conditional moving, and branch-free programming. Write examples to optimize branch-heavy code using bit hacks.
+- **Compiler Optimizations:** Research inlining, dead-code elimination, common subexpressions elimination, constant folding, and propagation. Write examples to see how these optimizations improve performance.
+- **Runtime Optimization:** Explore profile-guided optimization, tiered compilation, and deoptimization. Write examples to play with these techniques and measure their impact on performance.
+- **Loop Optimizations:** Investigate loop unrolling, fusion and fission, tiling and blocking, and invariant code motion. Write examples to optimize loop performance.
+- **Compiler Support:** Learn about compiler attributes, keywords, and preprocessor macros that assist in performance optimization. Write examples to leverage these features for improved code efficiency.
 
 ## Phase 6 - Auxiliary
 
-### Practical Application: The World is not enough
+### Practical Application: The World is Not Enough
 
-ui
-  
-  - supported frameworks
-  - designers
-  - platforms
-  - xml based stuff
-  - mvc, mvp, mvvm
-  - desktop, app, mobile, website, cli
+#### UI Development
 
-version control
+- **Supported Frameworks:** Research the UI frameworks supported by your language, such as WinForms, React, WPF, Angular, MAUI, Flutter, and Qt. Write examples to create simple user interfaces using these frameworks.
+- **Designers:** Explore tools and designers that help in UI development. Implement a project using a visual designer to create the layout.
+- **Platforms:** Understand the platforms you can target (desktop, mobile, web). Write platform-specific applications to grasp the differences and best practices for each.
+- **XML-Based UI:** Learn about XML-based UI frameworks (e.g., XAML, Android XML). Write examples to define UI layouts using XML.
+- **MVC, MVP, MVVM:** Study the MVC, MVP, and MVVM design patterns. Implement projects using each pattern to understand their structure and benefits.
+- **Application Types:** Explore how to develop desktop apps, mobile apps, websites, and CLI tools. Write examples for each type to understand the unique challenges and solutions.
 
-  - csv, svn, git, mercurial
-  - gitlab, github, bitbucket
-  - ide, cli and explorer support
-  - committing changes, branching, merging, and resolving conflicts
-  - automatic versioning
-  - build-servers and nightlies
+#### Version Control
 
-test-driven-development
+- **Version Control Systems:** Research different version control systems like CSV, SVN, Git, and Mercurial. Understand their use cases and benefits.
+- **Repository Hosting:** Explore hosting services like GitLab, GitHub, and Bitbucket. Write examples to create repositories and manage projects.
+- **Tool Integration:** Learn how to use version control tools within IDEs, CLI, and file explorers. Practice committing changes, branching, merging, and resolving conflicts.
+- **Automatic Versioning:** Implement automatic versioning in your projects. Set up build servers and nightly builds to ensure continuous integration and delivery.
 
-  - unit-tests, supported frameworks (e.g. nUnit, xUnit, JUnit), ide integration
-  - boundary testing, equivalence classes, code coverage, cyclomatic complexity
-  - red-green-refactor
+#### Test-Driven Development
 
-documentation
+- **Unit Testing:** Study unit testing and supported frameworks (e.g., NUnit, xUnit, JUnit). Write unit tests for your projects and integrate them into your IDE.
+- **Testing Strategies:** Explore boundary testing, equivalence classes, code coverage, and cyclomatic complexity. Write examples to implement these strategies.
+- **Red-Green-Refactor:** Practice the TDD-cycle. Write tests, implement code to pass the tests, and then refactor to improve code quality.
 
-  - class diagrams, call hierarchies
-  - doxygen, sphinx, javadoc
-  - setup auto-generation
+#### Documentation
 
-localization
+- **Diagrams and Hierarchies:** Learn how to create class diagrams and call hierarchies. Use tools to visualize your code structure.
+- **Documentation Generators:** Explore tools like Doxygen, Sphinx, and Javadoc for auto-generating documentation. Set up auto-generation for your projects.
 
-  - support
-  - best practices
-  - cultural differencies
+#### Localization
 
-resources and assets
-  
-  - application icon
-  - usage
-  - embedding text, images, application configuration
-  - free sources
-  - markets
+- **Localization Support:** Understand how to add localization support to your applications. Write examples to translate text and handle different languages.
+- **Best Practices:** Research best practices for localization in your language. Implement these practices to ensure your application is culturally sensitive and user-friendly.
 
-platforms and architectures
+#### Resources and Assets
 
-  - portability
+- **Application Icons:** Learn how to create and use application icons. Write examples to embed icons in your projects.
+- **Embedding Assets:** Understand how to embed text, images, and application configurations. Write examples to include and manage these assets.
+- **Free Sources:** Research free sources for icons, images, and other assets. Integrate these into your projects.
+- **Marketplaces:** Explore asset marketplaces and how to use them to find high-quality resources for your applications.
 
-public libraries
+#### Platforms and Architectures
 
-  - find good stuff
-  - npm, nuget, cpan
+- **Portability:** Investigate how to make your applications portable across different platforms and architectures. Write examples to ensure your code runs on various systems with and without recompilation.
 
-open-source
-  
-  - sharing is caring
-  - licenses
-  - contribute
+#### Public Libraries
 
-community and ecosystem
-  
-  - get involved
-  - help others
-  - share your experiences and learnings
-  - attend and hold meetups, courses, seminars, panels, conventions
-  - use forums, boards and social media
-  - be friendly
-  
-real-world-problems
+- **Finding Libraries:** Learn how to find and use public libraries in your projects. Explore package managers like npm, NuGet, and CPAN.
+- **Integration:** Write examples to integrate public libraries into your projects and understand how to manage dependencies.
 
-  - keep giving yourself new hurdles
-  - don't be evil
-  - make the world a better place
+#### Open-Source
+
+- **Open-Source Contribution:** Understand the importance of open-source. Learn about different licenses and how to contribute to open-source projects.
+- **License Models:** Learn about the different licenses available, their pros and cons.
+- **Sharing Code:** Write examples to share your code under an open-source license. Contribute to existing projects and document your contributions.
+
+#### Community and Ecosystem
+
+- **Community Involvement:** Get involved in the developer community. Help others by answering questions, sharing your experiences, and learning from others.
+- **Networking:** Attend and hold meetups, courses, seminars, panels, and conventions. Use forums, boards, and social media to connect with other developers.
+- **Be Friendly:** Promote a positive and inclusive environment. Encourage others and foster a friendly community.
+
+#### Real-World Problems
+
+- **Challenges:** Continuously challenge yourself with new problems. Write examples to solve real-world issues and improve your problem-solving skills.
+- **Ethics:** Remember to use your skills for good. Write applications that make the world a better place and avoid harmful practices.
+- **Impact:** Strive to make a positive impact with your work. Develop projects that address real-world problems and contribute to society in meaningful ways.
 
 # Points of Interest
 
@@ -1196,6 +1185,6 @@ As you embark on this journey to a new programming language, this guide ensures 
 
 # History
 
-20240615 - This Version
-20240607 - CodeProject's lost version
-20240201 - Initial version
+- 20240610 - This Version
+- 20240607 - CodeProject's lost version
+- 20240201 - Initial version
