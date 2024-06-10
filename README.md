@@ -47,14 +47,14 @@ This is the distilled essence of my experience learning numerous programming lan
 
 #### Toolset
 
-- **Compilers and Interpreters:** Obtain the necessary compiler, interpreter, or transpiler for your language. For instance, GCC for C/C++, Python for Python, or Node.js for JavaScript.
+- **The most important thing:** Obtain the necessary compiler, interpreter, or transpiler for your language. For instance, GCC for C/C++, Python for Python, dotNet Core for C# or VB, or Node.js for JavaScript.
 - **Command Line Skills:** Learn to use the command line to compile, build, and run your applications. This fundamental skill is crucial for efficient development and troubleshooting.
 - **Build Scripts:** Write simple build and run scripts to automate your workflow. Tools like Makefile, Ant, or shell scripts can streamline repetitive tasks and ensure consistency in your build process.
 
 #### Marketplaces, Galleries, Stores
 
 - **Explore Tools:** Discover marketplaces, galleries, or app stores relevant to your language and find tools, plugins, or extensions that can enhance your development experience. This might include code linters, formatters, or libraries that can help you code more efficiently and effectively.
-- **Productivity Enhancers:** Look for tools that can speed up your workflow, such as package managers (e.g., npm for JavaScript, pip for Python), version control systems (e.g., Git), and debugging tools.
+- **Productivity Enhancers:** Look for tools that can speed up your workflow, such as template managers, and debugging tools.
 
 #### Files and Folders
 
@@ -160,6 +160,160 @@ Explore how these types are used in your language and write examples to see thei
 
 - **Use Debugger:** Attach a debugger to your program and watch multiple data types. Set conditions on watches if supported. Is there a separate watch list aside from locals? Practice using these tools to understand how to inspect and manipulate variable states during execution.
 
+### Conditional Statements: Mastering Decision Making
+
+#### if / elsif / else
+
+- **Condition Checking:** Learn how condition checking works in your chosen language by writing simple programs to test basic `if` conditions.
+- **Using else:** Check if your language supports an `else` clause for handling cases where the `if` condition is false. Write examples to understand its usage and behavior.
+- **More than one condition:** Investigate if there is a separate `elsif` (or similar) construct for multiple conditions. Practice chaining conditions together using `elsif`.
+- **Syntax Differencies:** Explore if there are syntax differences between multi-line and single-line conditionals. For example, in Perl, the condition can follow the command in a single line (e.g., `print "Hello" if $condition;`) and in most C-based syntaxes you can omit braces.
+- **unless Statement:** Determine if your language supports an `if-not` statement (e.g., `unless` in Perl). Use it to simplify code that checks for negative conditions.
+- **Special Conditions:** Check for language-specific conditions like `exists`, `defined`, `is {}`, `is not`, and implement them in your conditionals to handle special cases.
+
+#### switch / choice / match / on / case
+
+- **Multi-Condition Statement:** Investigate if your language has a `switch`, `choice`, or equivalent statement for handling multiple conditions. Write a `switch` statement to understand its syntax and usage.
+- **Fall-Through:** Check if your language allows fall-through between cases in a `switch` statement. Write examples to see how unhandled cases are managed and explore the implications of fall-through.
+- **Handling Default Cases:** Learn how to handle cases where a value is not matched in any condition. Implement a `default` case or equivalent to catch unmatched values and ensure robust handling of all possible inputs.
+- **Continuing in Other Cases:** Explore how to continue execution in other cases within a `switch` statement. Practice using keywords like `break` or `continue` to control the flow and understand their impact.
+
+#### Test-Expressions
+
+- **Conditional Expressions:** Determine if your language supports conditional expressions, such as the ternary operator (`condition ? true_value : false_value`). Write examples to see how they simplify simple conditionals and make your code more concise.
+- **Switch Expressions:** Investigate if your language has a `switch` expression or similar construct for concise multi-condition handling. Practice using it to streamline complex conditional logic.
+
+#### Logical Operators and Short-Circuit Evaluation
+
+- **Operator Precedence:** Learn the precedence of logical condition operators (`&&`, `||`, `!`, etc.) in your language. Write expressions to see how precedence affects evaluation and ensure your conditions are evaluated as intended.
+- **Using Brackets:** Check if brackets are required or recommended to group conditions and clarify precedence. Experiment with different levels of brackets (e.g., `()`, `[]`, `(())`, `[[]]`) and their impact on your code's readability and correctness.
+- **Short-Circuit Evaluation:** Determine if your language uses short-circuit evaluation, where conditions are only evaluated as necessary. Write examples to see if all conditions are executed or if evaluation stops early when a definitive result is found, and understand how this can optimize your code.
+
+### Structured Programming: Loops and Iterations
+
+#### Jumping around
+
+- **Investigate goto:** Determine if your language supports `goto` statements. If so, learn how labels are defined and check if they are scoped. Write examples to see how `goto` can be used and understand its impact on code readability and structure.
+
+#### Counting up and down
+
+- **Explore for-loops:** Check if your language supports `for` loops. Experiment with both counting up and counting down.
+- **Using Arbitrary Deltas:** Find out if you can use arbitrary and dynamically changing step values (deltas) in `for` loops. Write code to test using different step values.
+- **Arbitrary Conditions:** Investigate if `for` loops can use arbitrary conditions for iteration. Try using conditions beyond simple counting.
+- **Variable Scoping:** Determine if variables declared in the `for` loop are scoped to the loop. Write examples to see how variable scope is handled.
+- **Inclusive/Exclusive Ranges:** Check if `for` loops include the last value or not. Write examples to understand the range behavior of your language's `for` loop.
+
+#### Head- and Foot-Controlled-Loops
+
+- **Difference Between Loops:** Learn the difference between head-controlled loops (e.g., `while`) and foot-controlled loops (e.g., `do-while`).
+- **Implementation:** Write examples of both types of loops to see how they are implemented in your language.
+- **Workarounds:** If your language does not support one of these loops, write code to simulate its behavior using available constructs.
+
+#### Until
+
+- **Using until:** Find out if your language has an `until` loop construct. If not, implement a workaround using other loop constructs (e.g., `while`). Write examples to simulate `until` loop behavior.
+
+#### Loop Controls
+
+- **Control Statements:** Determine if your language supports loop control statements such as `break`/`last` (to exit the loop) and `continue`/`next` (to skip the current iteration and proceed to the next one).
+- **Flow Alteration:** Experiment with these control statements to see how you can alter the flow of a loop. Write examples to test exiting loops early and skipping iterations.
+- **Using goto:** If `goto` is available in your language, explore how it can be used to jump out of or into loops entirely. Write examples to understand the implications and potential uses of `goto` for loop control.
+
+### Math: Crunching Numbers
+
+#### Simple Arithmetic
+
+- **Basic Operations:** Write a program that performs basic arithmetic operations:
+  - Addition (`+`)
+  - Subtraction (`-`)
+  - Multiplication (`*`)
+  - Division (`/`)
+  - Modulo (`%`, `mod`)
+- **Increment and Decrement:** Include increment (`++`/`inc`) and decrement (`--`/`dec`) operations in your program.
+- **Short-Hand Operators:** Research and use shorthand operators if available:
+  - `+=` for addition
+  - `-=` for subtraction
+  - `*=` for multiplication
+  - `/=` for division
+  - `%=` for modulo
+
+#### Integers and Floating-Points
+
+- **Division Differences:** Demonstrate the difference between integer and floating-point division:
+  - Example: `5 / 2` as an integer vs. `5 / 2.0` as a float.
+- **Operators:** Note if your language has different division operators, such as integer division (`\`) and float division (`/`).
+
+#### Rounding
+
+- **Rounding Modes:** Write examples to show different rounding modes:
+  - Rounding towards zero / Truncating
+  - Rounding to the nearest integer
+  - Always round up / Ceiling
+  - Always round down / Floor
+- **Data Type Handling:** Document how the language handles rounding for different data types (e.g., integers, floats).
+
+### Exponentiation and Logarithmics
+
+- **Implement Exponentiation:** Use operators like `**` or `^`, or functions like `pow` to implement exponentiation.
+- **Implement Roots:** Implement square, cubic, and arbitrary roots using similar operators or functions, such as `pow`, `sqrt`, and `cbrt`.
+- **Logarithmic Functions:** Implement logarithmic functions including `exp`, `log2`, and `log10`.
+
+#### Trigonometry
+
+- **Trigonometric Functions:** Sine (`sin`), Cosine (`cos`), Tangent (`tan`), Cotangent (`cot`), Secans (`sec`), Cosecans (`csc`)
+- **Inverse functions:** arcsine (`asin`), arccosine (`acos`), arctangent (`atan`), `acot`, `asec`, `acsc`
+- **Hyperbolic functions:** hyperbolic sine (`sinh`), hyperbolic cosine (`cosh`), hyperbolic tangent (`tanh`), hyperbolic cotangent (`coth`), hyperbolic secans (`sech`), hyperbolic cosecans (`csch`)
+- **Area Functions:** Area-related inverse of hyperbolic functions `arsinh`, `arcosh`, `artanh`, `arcoth`, `arsech`, `arscsch`
+
+#### Bitwise Operations
+
+- **Explore Bitwise Operators:** Investigate whether your language supports bitwise operators like AND (`&`), OR (`|`), XOR (`^`), NAND, NOR, EQU and NOT (`~`). If your language lacks direct support, research and implement workarounds to achieve these operations.
+- **Experiment with Bit Shifting:** Determine if your language supports bit shifting operations such as Shift Left (`<<`) and Shift Right (`>>`). Understand the difference between logical and arithmetic shifts. If direct support is missing, implement these operations manually.
+- **Implement Bit Rotation:** Check if your language supports bit rotation operations like Rotate Left and Rotate Right. Also check for rotate-with-carry variants. If not available, challenge yourself to write code that mimics this behavior.
+- **Convert Number Bases:** Learn how to convert numbers to different bases, such as binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16). Implement these conversions yourself if built-in functions are not available.
+
+#### Randomness
+
+##### Determinism vs Non-Determinism
+
+- **Understand Determinism:** Research how deterministic random number generators (RNGs) work. How do they produce the same sequence of numbers from the same initial seed? Why is this useful for debugging and simulations? Write a program that uses a deterministic RNG to generate a sequence of numbers, then run it multiple times with the same seed to confirm the behavior.
+
+- **Explore Non-Determinism:** Learn about non-deterministic RNGs that rely on external entropy sources to produce different sequences of numbers even with the same initial conditions. Investigate and implement a non-deterministic RNG in your language, if available. Compare the sequences generated with those from a deterministic RNG.
+
+##### Distribution and Standard Deviation
+
+- **Study Probability Distributions:** Look into different types of probability distributions, such as uniform, normal, and exponential. Understand how these distributions affect the randomness of generated numbers. Write code to generate numbers following different distributions and plot their histograms to visualize the differences.
+
+- **Calculate Standard Deviation:** Learn how to compute the standard deviation of a set of numbers and why it is important in understanding the spread of a distribution. Generate a large set of random numbers and calculate their mean and standard deviation. Modify the code to change the distribution and observe how the standard deviation changes.
+
+##### Cryptographically Secure vs PRNG
+
+- **Define Pseudorandom Number Generators:** Understand what PRNGs are and how they differ from true random number generators. Research the common algorithms used for PRNGs and their applications. Implement a simple PRNG in your language and generate a sequence of numbers. Analyze the sequence for patterns or repetitions.
+
+- **Explore Cryptographically Secure RNGs:** Learn what makes an RNG cryptographically secure and why it is important for security applications. Use a cryptographically secure RNG to generate random numbers. Compare the results with those from a standard PRNG in terms of unpredictability and security.
+
+##### Common RNG Algorithms
+
+- **Linear Congruential Generator:** Study how LCGs work and their historical significance. Implement an LCG in your language and generate a sequence of random numbers. Analyze the period and distribution of the numbers.
+
+- **Xorshift:** Research the xorshift algorithm and its benefits over LCGs. Implement a xorshift RNG and compare its performance and randomness with an LCG.
+
+- **Mersenne Twister:** Learn about the Mersenne Twister algorithm, its design, and why it is widely used. Use the Mersenne Twister algorithm in your language (most languages have built-in support) and generate a sequence of numbers. Compare its period and randomness with other algorithms.
+
+- **Well Equidistributed Long-period Linear:** Investigate the WELL algorithm and how it improves on the Mersenne Twister. Implement or use a WELL RNG in your language, if available, and evaluate its performance.
+
+- **Complementary Multiply With Carry:** Understand the principles behind CMWC RNGs and their advantages. Write code to generate random numbers using this method and compare it with other RNGs.
+
+- **Keep It Simple Stupid:** Research the KISS RNG and its components. Implement it and analyze its simplicity and effectiveness.
+
+- **Blum-Blum-Shub:** Study the Blum-Blum-Shub cryptographically secure RNG and its reliance on number theory. Implement the algorithm and generate a sequence of secure random numbers. Compare its performance with other cryptographic RNGs.
+
+##### Entropy Sources and Good Seeds
+
+- **Identify Entropy Sources:** Research common sources of entropy used for seeding RNGs, such as system clocks, mouse movements, and environmental noise. Explore and document the entropy sources available on your system. Use these sources to seed your RNG and observe the impact on the randomness of generated numbers.
+
+- **Understand Seeding:** Learn the importance of good seeds for RNGs and how poor seeds can lead to predictable outputs. Experiment with different seeds for your RNGs and analyze how the sequences differ. Write code to gather high-quality seeds from various entropy sources.
+
 ### I/O: Communicating with the Outside World
 
 #### User Input
@@ -196,160 +350,6 @@ Explore how these types are used in your language and write examples to see thei
 - **Handling Return Values:** Practice capturing and handling return values from system calls. Ensure you understand the access rights required for various operations.
 - **Access Rights:** Investigate how to check and modify access rights for files and directories from your code. Practice writing code that adjusts permissions safely and correctly.
 
-### Math: Crunching Numbers
-
-#### Simple Arithmetic
-
-- **Basic Operations:** Write a program that performs basic arithmetic operations:
-  - Addition (`+`)
-  - Subtraction (`-`)
-  - Multiplication (`*`)
-  - Division (`/`)
-  - Modulo (`%`, `mod`)
-- **Increment and Decrement:** Include increment (`++`) and decrement (`--`) operations in your program.
-- **Short-Hand Operators:** Research and implement shorthand operators:
-  - `+=` for addition
-  - `-=` for subtraction
-  - `*=` for multiplication
-  - `/=` for division
-  - `%=` for modulo
-
-#### Integers and Floating-Points
-
-- **Division Differences:** Demonstrate the difference between integer and floating-point division:
-  - Example: `5 / 2` as an integer vs. `5 / 2.0` as a float.
-- **Operators:** Note if your language has different division operators, such as integer division (`\`) and float division (`/`).
-
-#### Rounding
-
-- **Rounding Modes:** Write examples to show different rounding modes:
-  - Rounding towards zero
-  - Rounding to the nearest integer / Truncating
-  - Always round up / Ceiling
-  - Always round down / Floor
-- **Data Type Handling:** Document how the language handles rounding for different data types (e.g., integers, floats).
-
-### Exponentiation and Logarithmics
-
-- **Implement Exponentiation:** Use operators like `**` or `^`, or functions like `pow` to implement exponentiation.
-- **Implement Roots:** Implement square, cubic, and arbitrary roots using similar operators or functions, such as `pow`, `sqrt`, and `cbrt`.
-- **Logarithmic Functions:** Implement logarithmic functions including `exp`, `log2`, and `log10`.
-
-#### Trigonometry
-
-- **Trigonometric Functions:** Sine (`sin`), Cosine (`cos`), Tangent (`tan`), Cotangent (`cot`), Secans (`sec`), Cosecans (`csc`)
-- **Inverse functions:** arcsine (`asin`), arccosine (`acos`), arctangent (`atan`), `acot`, `asec`, `acsc`
-- **Hyperbolic functions:** hyperbolic sine (`sinh`), hyperbolic cosine (`cosh`), hyperbolic tangent (`tanh`), hyperbolic cotangent (`coth`), hyperbolic secans (`sech`), hyperbolic cosecans (`csch`)
-- **Area Functions:** Area-related inverse of hyperbolic functions `Arsinh`, `Arcosh`, `Artanh`, `Arcoth`, `Arsech`, `Arscsch`
-
-#### Bitwise Operations
-
-- **Explore Bitwise Operators:** Investigate whether your language supports bitwise operators like AND (`&`), OR (`|`), XOR (`^`), NAND, NOR, EQU and NOT (`~`). If your language lacks direct support, research and implement workarounds to achieve these operations.
-- **Experiment with Bit Shifting:** Determine if your language supports bit shifting operations such as Shift Left (`<<`) and Shift Right (`>>`). Understand the difference between logical and arithmetic shifts. If direct support is missing, implement these operations manually.
-- **Implement Bit Rotation:** Check if your language supports bit rotation operations like Rotate Left and Rotate Right. Also check for rotate-with-carry variants. If not available, challenge yourself to write code that mimics this behavior.
-- **Convert Number Bases:** Learn how to convert numbers to different bases, such as binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16). Implement these conversions yourself if built-in functions are not available.
-
-#### Randomness
-
-##### Determinism vs Non-Determinism
-
-- **Understand Determinism:** Research how deterministic random number generators (RNGs) work. How do they produce the same sequence of numbers from the same initial seed? Why is this useful for debugging and simulations? Write a program that uses a deterministic RNG to generate a sequence of numbers, then run it multiple times with the same seed to confirm the behavior.
-
-- **Explore Non-Determinism:** Learn about non-deterministic RNGs that rely on external entropy sources to produce different sequences of numbers even with the same initial conditions. Investigate and implement a non-deterministic RNG in your language, if available. Compare the sequences generated with those from a deterministic RNG.
-
-##### Distribution and Standard Deviation
-
-- **Study Probability Distributions:** Look into different types of probability distributions, such as uniform, normal, and exponential. Understand how these distributions affect the randomness of generated numbers. Write code to generate numbers following different distributions and plot their histograms to visualize the differences.
-
-- **Calculate Standard Deviation:** Learn how to compute the standard deviation of a set of numbers and why it is important in understanding the spread of a distribution. Generate a large set of random numbers and calculate their mean and standard deviation. Modify the code to change the distribution and observe how the standard deviation changes.
-
-##### Cryptographically Secure vs PRNG
-
-- **Define PRNGs:** Understand what Pseudorandom Number Generators (PRNGs) are and how they differ from true random number generators. Research the common algorithms used for PRNGs and their applications. Implement a simple PRNG in your language and generate a sequence of numbers. Analyze the sequence for patterns or repetitions.
-
-- **Explore Cryptographically Secure RNGs:** Learn what makes an RNG cryptographically secure and why it is important for security applications. Use a cryptographically secure RNG to generate random numbers. Compare the results with those from a standard PRNG in terms of unpredictability and security.
-
-##### Common RNG Algorithms
-
-- **Linear Congruential Generator (LCG):** Study how LCGs work and their historical significance. Implement an LCG in your language and generate a sequence of random numbers. Analyze the period and distribution of the numbers.
-
-- **Xorshift:** Research the xorshift algorithm and its benefits over LCGs. Implement a xorshift RNG and compare its performance and randomness with an LCG.
-
-- **Mersenne Twister:** Learn about the Mersenne Twister algorithm, its design, and why it is widely used. Use the Mersenne Twister algorithm in your language (most languages have built-in support) and generate a sequence of numbers. Compare its period and randomness with other algorithms.
-
-- **WELL (Well Equidistributed Long-period Linear):** Investigate the WELL algorithm and how it improves on the Mersenne Twister. Implement or use a WELL RNG in your language, if available, and evaluate its performance.
-
-- **CMWC (Complementary Multiply With Carry):** Understand the principles behind CMWC RNGs and their advantages. Write code to generate random numbers using the CMWC method and compare it with other RNGs.
-
-- **KISS64:** Research the KISS (Keep It Simple Stupid) RNG and its components. Implement the KISS64 RNG and analyze its simplicity and effectiveness.
-
-- **Blum-Blum-Shub:** Study the Blum-Blum-Shub cryptographically secure RNG and its reliance on number theory. Implement the Blum-Blum-Shub algorithm and generate a sequence of secure random numbers. Compare its performance with other cryptographic RNGs.
-
-##### Entropy Sources and Good Seeds
-
-- **Identify Entropy Sources:** Research common sources of entropy used for seeding RNGs, such as system clocks, mouse movements, and environmental noise. Explore and document the entropy sources available on your system. Use these sources to seed your RNG and observe the impact on the randomness of generated numbers.
-
-- **Understand Seeding:** Learn the importance of good seeds for RNGs and how poor seeds can lead to predictable outputs. Experiment with different seeds for your RNGs and analyze how the sequences differ. Write code to gather high-quality seeds from various entropy sources.
-
-### Conditional Statements: Mastering Decision Making
-
-#### if / else if / else
-
-- **Condition Checking:** Learn how condition checking works in your chosen language by writing simple programs to test basic `if` conditions.
-- **Using else:** Check if your language supports an `else` clause for handling cases where the `if` condition is false. Write examples to understand its usage and behavior.
-- **Using else if:** Investigate if there is a separate `else if` (or similar) construct for multiple conditions. Practice chaining conditions together using `else if`.
-- **Syntax Differences:** Explore if there are syntax differences between multi-line and single-line conditionals. For example, in Perl, the condition can follow the command in a single line (e.g., `print "Hello" if $condition;`).
-- **unless Statement:** Determine if your language supports an `unless` statement (e.g., `unless` in Perl). Use it to simplify code that checks for negative conditions.
-- **Special Conditions:** Check for language-specific conditions like `exists`, `defined`, `is {}`, `is not`, and implement them in your conditionals to handle special cases.
-
-#### switch / choice / match / on / case
-
-- **Multi-Condition Statement:** Investigate if your language has a `switch`, `choice`, or equivalent statement for handling multiple conditions. Write a `switch` statement to understand its syntax and usage.
-- **Fall-Through:** Check if your language allows fall-through between cases in a `switch` statement. Write examples to see how unhandled cases are managed and explore the implications of fall-through.
-- **Handling Default Cases:** Learn how to handle cases where a value is not matched in any condition. Implement a `default` case or equivalent to catch unmatched values and ensure robust handling of all possible inputs.
-- **Continuing in Other Cases:** Explore how to continue execution in other cases within a `switch` statement. Practice using keywords like `break` or `continue` to control the flow and understand their impact.
-
-#### Test-Expressions
-
-- **Conditional Expressions:** Determine if your language supports conditional expressions, such as the ternary operator (`condition ? true_value : false_value`). Write examples to see how they simplify simple conditionals and make your code more concise.
-- **Switch Expressions:** Investigate if your language has a `switch` expression or similar construct for concise multi-condition handling. Practice using it to streamline complex conditional logic.
-
-#### Logical Operators and Short-Circuit Evaluation
-
-- **Operator Precedence:** Learn the precedence of logical condition operators (`&&`, `||`, `!`, etc.) in your language. Write expressions to see how precedence affects evaluation and ensure your conditions are evaluated as intended.
-- **Using Brackets:** Check if brackets are required or recommended to group conditions and clarify precedence. Experiment with different levels of brackets (e.g., `()`, `[]`, `(())`, `[[]]`) and their impact on your code's readability and correctness.
-- **Short-Circuit Evaluation:** Determine if your language uses short-circuit evaluation, where conditions are only evaluated as necessary. Write examples to see if all conditions are executed or if evaluation stops early when a definitive result is found, and understand how this can optimize your code.
-
-### Structured Programming: Loops and Iterations
-
-#### goto
-
-- **Investigate goto:** Determine if your language supports `goto` statements. If so, learn how labels are defined and check if they are scoped. Write examples to see how `goto` can be used and understand its impact on code readability and structure.
-
-#### for with stepping
-
-- **Explore for-loops:** Check if your language supports `for` loops. Experiment with both counting up and counting down.
-- **Using Arbitrary Deltas:** Find out if you can use arbitrary and dynamically changing step values (deltas) in `for` loops. Write code to test using different step values.
-- **Arbitrary Conditions:** Investigate if `for` loops can use arbitrary conditions for iteration. Try using conditions beyond simple counting.
-- **Variable Scoping:** Determine if variables declared in the `for` loop are scoped to the loop. Write examples to see how variable scope is handled.
-- **Inclusive/Exclusive Ranges:** Check if `for` loops include the last value or not. Write examples to understand the range behavior of your language's `for` loop.
-
-#### until
-
-- **Using until:** Find out if your language has an `until` loop construct. If not, implement a workaround using other loop constructs (e.g., `while`). Write examples to simulate `until` loop behavior.
-
-#### Head- and Foot-Controlled-Loops
-
-- **Difference Between Loops:** Learn the difference between head-controlled loops (e.g., `while`) and foot-controlled loops (e.g., `do-while`).
-- **Implementation:** Write examples of both types of loops to see how they are implemented in your language.
-- **Workarounds:** If your language does not support one of these loops, write code to simulate its behavior using available constructs.
-
-#### Loop Controls (break/last, continue/next)
-
-- **Control Statements:** Determine if your language supports loop control statements such as `break` (to exit the loop) and `continue` (to skip the current iteration and proceed to the next one).
-- **Flow Alteration:** Experiment with these control statements to see how you can alter the flow of a loop. Write examples to test exiting loops early and skipping iterations.
-- **Using goto:** If `goto` is available in your language, explore how it can be used to jump out of or into loops entirely. Write examples to understand the implications and potential uses of `goto` for loop control.
-
 ## Phase 3 - Intermediate
 
 ### Arrays: How to Acquire and Manage Heap or Dynamic Memory
@@ -374,8 +374,8 @@ Explore how these types are used in your language and write examples to see thei
 
 #### Built-In Array Methods
 
-- **Sorting:** Learn about built-in methods for sorting arrays. Write examples to sort arrays using different algorithms and parameters.
-- **Finding:** Explore methods for finding elements in arrays. Practice using functions to search for specific values and understand how they work.
+- **Sorting:** Learn about built-in methods for sorting arrays. Research the difference between stable and unstable sorting. Write examples to sort arrays using different algorithms and parameters. Try to code BubbleSort and Insertion Sort.
+- **Finding:** Explore methods for finding elements in arrays. Practice using functions to search for specific values and understand how they work. Implement linear and binary search.
 - **Partitioning:** Check if your language provides methods for partitioning arrays. Write code to divide arrays into sub-arrays based on specific conditions.
 
 #### Advanced Methods
@@ -417,7 +417,7 @@ Explore how these types are used in your language and write examples to see thei
 #### Records
 
 - **Immutability:** Check if your language supports immutable records. Write examples to create and use immutable records.
-- **With-Statement:** Investigate if records support a `with` statement for creating modified copies. Write code to see how this feature works.
+- **Copy-on-write:** Investigate if records support a `with` statement for creating modified copies. Write code to see how this feature works.
 - **Primary Constructors:** Learn about primary constructors for records. Write examples to define and use primary constructors.
 
 #### Tuples
@@ -447,7 +447,7 @@ Explore how these types are used in your language and write examples to see thei
 #### Conversion and Display
 
 - **Operator Overloading:** Determine if your language supports operator overloading. Write examples to overload operators for custom data structures.
-- **ToString:** Explore how to implement a `ToString` method or equivalent for custom data structures. Write examples to display the contents of your structures.
+- **Stringification:** Explore how to implement a `ToString` method or equivalent for custom data structures. Write examples to display the contents of your structures.
 
 ### Procedural Programming: Choreographing Logical Flows
 
@@ -530,7 +530,7 @@ Explore how these types are used in your language and write examples to see thei
 - **Splitting, Trimming, Concatenation:** Practice basic string operations such as splitting strings into substrings, trimming whitespace, and concatenating strings. Explore built-in functions or methods for these operations.
 - **Max Size:** Investigate the maximum size of strings supported by your language. Understand any limitations and how they might affect your programs.
 - **Builder Pattern:** Learn about the builder pattern for efficient string concatenation, especially in languages where strings are immutable. Write examples using string builders or equivalent constructs.
-- **In-Memory Storage:** Understand how strings are stored in memory (e.g., 16-bit Unicode). Check if splitting a string creates references to the same memory or copies of the data.
+- **In-Memory Storage:** Understand how strings are stored in memory (e.g., ANSI-Z or 16-bit Unicode). Check if splitting a string creates references to the same memory or copies of the data.
 - **Interning:** Explore string interning, where identical string literals are stored only once in memory. Determine if interning is automatic or manual and write examples to see its benefits and usage.
 
 #### Regular Expressions
@@ -620,15 +620,16 @@ Explore how these types are used in your language and write examples to see thei
 #### Interfaces
 
 - **Interface Support:** Check if your language supports interfaces. Write examples to create and implement interfaces.
-- **Polymorphism:** Understand polymorphism and how it allows objects to be treated as instances of their parent class or interface. Write examples to demonstrate polymorphism.
+- **Polymorphism:** Understand polymorphism and how it allows objects to be treated as instances of their parent class or interface. Write examples to demonstrate the Liskov-Substition-Principle.
 - **Multiple Interfaces:** Investigate if a class can implement multiple interfaces and how explicit vs implicit implementations work. Practice writing code that enforces and uses multiple interfaces.
 - **Static Methods and Default Implementations:** Explore if interfaces can enforce static methods or provide default implementations. Write examples to understand these capabilities.
 
-#### ctors, dtors, cctors, Unloading
+#### ctors, dtors, cctors, Unloading, idx
 
 - **Constructors and Destructors:** Learn about constructors and destructors in your language. Write examples to see when and how they are called implicitly.
 - **Static Constructors (cctor):** Investigate if static constructors are supported and when they are called. Write examples to understand their usage.
 - **Unloading:** Explore if your language supports unloading of classes and when this occurs. Write examples to observe unloading behavior.
+- **Indexer:** Research if indexers are available, how many dimensions they support and which syntax you need.
 
 #### Inheritance and Dynamic Resolution
 
@@ -662,13 +663,13 @@ Explore how these types are used in your language and write examples to see thei
 
 #### Lambda Expressions and Closures
 
-- **Support and Syntax:** Determine if your language supports lambda expressions and closures. Learn the syntax and write examples to use them in your code. Check if they can be used for different members, such as methods, constructors (ctor), destructors (dtor), and indexers (idx).
+- **Support and Syntax:** Determine if your language supports lambda expressions and closures. Learn the syntax and write examples to use them in your code. Check if they can be used for different members, such as methods, ctor, dtor, and idx.
 - **Capture Mechanism:** Understand what variables are captured by closures and how this is achieved by the compiler. Investigate if any hidden class implementations are used behind the scenes and if closures are shared among instances.
 
 #### First-Class Functions and Method-Pointers
 
 - **Special Syntax:** Explore if special syntax is needed to use first-class functions and method-pointers. Write examples to assign functions to variables and pass them as arguments.
-- **Local (Nested) Functions:** Investigate if your language supports local (nested) functions within other functions. Write examples to see how they work and their scope.
+- **Nested Functions:** Investigate if your language supports local functions within other functions. Write examples to see how they work and their scope.
 
 #### Delegates, Generics, Templates
 
@@ -708,7 +709,7 @@ Explore how these types are used in your language and write examples to see thei
 
 #### Finalizers and Disposables
 
-- **Exceptions in Constructors/Destructors:** Investigate what happens when exceptions are thrown during constructors (`ctor`) or destructors (`dtor`). Write examples to see how your language handles these situations.
+- **Exceptions in Constructors/Destructors:** Investigate what happens when exceptions are thrown during ctor or dtor. Write examples to see how your language handles these situations.
 - **Application Unloading:** Explore what happens when your application is unloaded, particularly if there are exceptions you cannot catch or that are automatically re-thrown.
 - **Resource Management:** Learn how to manage resource deallocation. Investigate if your language supports the disposable pattern and using pattern. Write examples to see how these patterns help in resource management.
 
@@ -755,7 +756,7 @@ Explore how these types are used in your language and write examples to see thei
 
 - **Using Collection Expressions:** Learn about collection expressions such as range expressions. Write examples to see if these operations share memory or create copies.
 - **Grouping and Projection:** Explore how to group, project, map, and select elements within collections. Write examples to practice these operations.
-- **LINQ and Transformations:** Determine if your language supports LINQ or similar query capabilities. Write examples to perform complex queries and transformations, such as the Schwartzian transform.
+- **Language Integrated Querying and Transformations:** Determine if your language supports LINQ or similar query capabilities. Write examples to perform complex queries and transformations, such as the Schwartzian transform.
 
 #### Collection Types
 
@@ -815,7 +816,7 @@ Explore how these types are used in your language and write examples to see thei
 
 - **to-do list:** Advance to more complex projects with a layered architecture. Separate layers for data access, business logic, and input/output operations.
 
-- **Layered Architecture:** Divide your application into three projects:
+- **Layered Architecture:** Divide your application into three projects utilizing SOLID-principles:
   - **Data Access Layer:** Manages task storage and retrieval.
   - **Business Logic Layer:** Handles task operations and rules.
   - **I/O Layer:** Manages user interactions and displays tasks.
@@ -863,7 +864,7 @@ Explore how these types are used in your language and write examples to see thei
 
 - **Basics:** Learn how to create, abort, start, and resume threads in your language. Write examples to manage thread lifecycle effectively.
 - **Thread Model:** Investigate the threading model used by your language. Understand the differences between native threads and fibers. Implement examples to see how your model works.
-- **Existing Values:** Explore if existing values are automatically copied when new threads are created and how to control this behaviour. Write examples to handle data sharing and avoid issues like race conditions.
+- **Existing Values:** Explore if existing values are automatically copied when new threads are created and how to control this behaviour. Write examples to handle data sharing, thread locals and avoid issues like race conditions.
 
 #### Thread Safety
 
@@ -879,7 +880,7 @@ Explore how these types are used in your language and write examples to see thei
 
 #### Lock-Free Programming
 
-- **Why and How:** Research the benefits of lock-free programming and how it can improve performance. Implement lock-free data structures utilizing `Exchange` and `CompareExchange` to understand the principles.
+- **No more blocking:** Research the benefits of lock-free programming and how it can improve performance. Implement lock-free data structures utilizing `Exchange` and `CompareExchange` to understand the principles.
 - **Special Syntax:** Learn about any special syntax your language provides for lock-free programming. Write examples to use these constructs.
 - **Lock-Free Collections:** Explore existing lock-free collections. Implement and test their performance in your projects.
 - **Interlocked Anything-Pattern:** Investigate the interlocked anything-pattern for atomic operations. Write examples to apply this pattern in your code.
@@ -1069,7 +1070,7 @@ Explore how these types are used in your language and write examples to see thei
 
 #### Text Compression
 
-- **Burrows–Wheeler Transform:** Explore the Burrows–Wheeler Transform and how it improves text compression. Write examples to implement this transform and understand its impact on compression ratio.
+- **Data Re-ordering:** Explore the Burrows–Wheeler Transform, delta encoding and normalization. Write examples to implement these and understand its impact on compression ratio.
 - **Dictionary Sizes:** Investigate the importance of dictionary sizes in text compression algorithms. Experiment with different sizes to see their effect on compression efficiency.
 - **Sliding Windows:** Learn about sliding window techniques used in compression algorithms like LZ77. Implement examples to understand how they work.
 - **Probabilistic Modelling:** Study probabilistic modelling and its role in text compression. Write examples to use these models for predicting and compressing text data.
@@ -1102,6 +1103,7 @@ Explore how these types are used in your language and write examples to see thei
 - **Benchmarking Techniques:** Research how to benchmark code effectively. Implement benchmarks with proper warm-up, manage release vs. debug builds, handle attached debuggers, choose appropriate iteration counts, manage outliers, and use multi-threading. Understand the difference between system and user time, and use profiling and synthetic benchmarks to measure performance. Find out if there are any packages in your language available to help you.
 - **CPU Pipelines and Stalling:** Investigate CPU pipelines, stalling, blocking, and refilling. Write examples to optimize code execution and reduce pipeline stalls.
 - **Superscalar Architectures:** Explore instruction-level parallelism, data dependencies, hazards, and register renaming. Write examples to take advantage of superscalar architectures.
+- **Computing Resources:** Research Simultaneous Multi-Threading and different types of processing units. Write examples to utilize GPU, CPU, NPU, TPU or PPU.
 - **Cache Optimization:** Understand cache sizes, levels, associativity, and cache thrashing. Write examples to improve data locality, use prefetching, and ensure proper alignment for optimal cache performance.
 - **Branch Prediction:** Learn about static vs. dynamic branch prediction, conditional moving, and branch-free programming. Write examples to optimize branch-heavy code using bit hacks.
 - **Compiler Optimizations:** Research inlining, dead-code elimination, common subexpressions elimination, constant folding, and propagation. Write examples to see how these optimizations improve performance.
@@ -1119,7 +1121,7 @@ Explore how these types are used in your language and write examples to see thei
 - **Designers:** Explore tools and designers that help in UI development. Implement a project using a visual designer to create the layout.
 - **Platforms:** Understand the platforms you can target (desktop, mobile, web). Write platform-specific applications to grasp the differences and best practices for each.
 - **XML-Based UI:** Learn about XML-based UI frameworks (e.g., XAML, Android XML). Write examples to define UI layouts using XML.
-- **MVC, MVP, MVVM:** Study the MVC, MVP, and MVVM design patterns. Implement projects using each pattern to understand their structure and benefits.
+- **Design Patterns:** Study the MVC, MVP, and MVVM patterns. Implement projects using each pattern to understand their structure and benefits.
 - **Application Types:** Explore how to develop desktop apps, mobile apps, websites, and CLI tools. Write examples for each type to understand the unique challenges and solutions.
 
 #### Version Control
@@ -1163,7 +1165,7 @@ Explore how these types are used in your language and write examples to see thei
 
 #### Open-Source
 
-- **Open-Source Contribution:** Understand the importance of open-source. Learn about different licenses and how to contribute to open-source projects.
+- **Open-Source Contribution:** Understand the importance of open-source. Learn how to contribute to open-source projects, track bugs and request features.
 - **License Models:** Learn about the different licenses available, their pros and cons.
 - **Sharing Code:** Write examples to share your code under an open-source license. Contribute to existing projects and document your contributions.
 
@@ -1175,7 +1177,7 @@ Explore how these types are used in your language and write examples to see thei
 
 #### Real-World Problems
 
-- **Challenges:** Continuously challenge yourself with new problems. Write examples to solve real-world issues and improve your problem-solving skills.
+- **Neverending Learning:** Continuously challenge yourself with new problems and hurdles to overcome. Write examples to solve real-world issues and improve your problem-solving skills.
 - **Ethics:** Remember to use your skills for good. Write applications that make the world a better place and avoid harmful practices.
 - **Impact:** Strive to make a positive impact with your work. Develop projects that address real-world problems and contribute to society in meaningful ways.
 
