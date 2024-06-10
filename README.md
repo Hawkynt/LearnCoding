@@ -224,9 +224,9 @@ Explore how these types are used in your language and write examples to see thei
 
 - **Rounding Modes:** Write examples to show different rounding modes:
   - Rounding towards zero
-  - Rounding to the nearest integer
-  - Always round up
-  - Always round down
+  - Rounding to the nearest integer / Truncating
+  - Always round up / Ceiling
+  - Always round down / Floor
 - **Data Type Handling:** Document how the language handles rounding for different data types (e.g., integers, floats).
 
 ### Exponentiation and Logarithmics
@@ -237,17 +237,59 @@ Explore how these types are used in your language and write examples to see thei
 
 #### Trigonometry
 
-- **Trigonometric Functions:** Sine (`sin`), Cosine (`cos`), Tangent (`tan`), Secans (`sec`), Cosecans (`csc`)
-- **Inverse functions:** arcsine (`asin`), arccosine (`acos`), arctangent (`atan`)
-- **Hyperbolic functions:** hyperbolic sine (`sinh`), hyperbolic cosine (`cosh`), hyperbolic tangent (`tanh`)
-- **Area Functions:** Area-realted inverse of hyperbolic functions
+- **Trigonometric Functions:** Sine (`sin`), Cosine (`cos`), Tangent (`tan`), Cotangent (`cot`), Secans (`sec`), Cosecans (`csc`)
+- **Inverse functions:** arcsine (`asin`), arccosine (`acos`), arctangent (`atan`), `acot`, `asec`, `acsc`
+- **Hyperbolic functions:** hyperbolic sine (`sinh`), hyperbolic cosine (`cosh`), hyperbolic tangent (`tanh`), hyperbolic cotangent (`coth`), hyperbolic secans (`sech`), hyperbolic cosecans (`csch`)
+- **Area Functions:** Area-related inverse of hyperbolic functions `Arsinh`, `Arcosh`, `Artanh`, `Arcoth`, `Arsech`, `Arscsch`
 
 #### Bitwise Operations
 
 - **Explore Bitwise Operators:** Investigate whether your language supports bitwise operators like AND (`&`), OR (`|`), XOR (`^`), NAND, NOR, EQU and NOT (`~`). If your language lacks direct support, research and implement workarounds to achieve these operations.
 - **Experiment with Bit Shifting:** Determine if your language supports bit shifting operations such as Shift Left (`<<`) and Shift Right (`>>`). Understand the difference between logical and arithmetic shifts. If direct support is missing, implement these operations manually.
-- **Implement Bit Rotation:** Check if your language supports bit rotation operations like Rotate Left and Rotate Right. If not, challenge yourself to write code that mimics this behavior.
+- **Implement Bit Rotation:** Check if your language supports bit rotation operations like Rotate Left and Rotate Right. Also check for rotate-with-carry variants. If not available, challenge yourself to write code that mimics this behavior.
 - **Convert Number Bases:** Learn how to convert numbers to different bases, such as binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16). Implement these conversions yourself if built-in functions are not available.
+
+#### Randomness
+
+##### Determinism vs Non-Determinism
+
+- **Understand Determinism:** Research how deterministic random number generators (RNGs) work. How do they produce the same sequence of numbers from the same initial seed? Why is this useful for debugging and simulations? Write a program that uses a deterministic RNG to generate a sequence of numbers, then run it multiple times with the same seed to confirm the behavior.
+
+- **Explore Non-Determinism:** Learn about non-deterministic RNGs that rely on external entropy sources to produce different sequences of numbers even with the same initial conditions. Investigate and implement a non-deterministic RNG in your language, if available. Compare the sequences generated with those from a deterministic RNG.
+
+##### Distribution and Standard Deviation
+
+- **Study Probability Distributions:** Look into different types of probability distributions, such as uniform, normal, and exponential. Understand how these distributions affect the randomness of generated numbers. Write code to generate numbers following different distributions and plot their histograms to visualize the differences.
+
+- **Calculate Standard Deviation:** Learn how to compute the standard deviation of a set of numbers and why it is important in understanding the spread of a distribution. Generate a large set of random numbers and calculate their mean and standard deviation. Modify the code to change the distribution and observe how the standard deviation changes.
+
+##### Cryptographically Secure vs PRNG
+
+- **Define PRNGs:** Understand what Pseudorandom Number Generators (PRNGs) are and how they differ from true random number generators. Research the common algorithms used for PRNGs and their applications. Implement a simple PRNG in your language and generate a sequence of numbers. Analyze the sequence for patterns or repetitions.
+
+- **Explore Cryptographically Secure RNGs:** Learn what makes an RNG cryptographically secure and why it is important for security applications. Use a cryptographically secure RNG to generate random numbers. Compare the results with those from a standard PRNG in terms of unpredictability and security.
+
+##### Common RNG Algorithms
+
+- **Linear Congruential Generator (LCG):** Study how LCGs work and their historical significance. Implement an LCG in your language and generate a sequence of random numbers. Analyze the period and distribution of the numbers.
+
+- **Xorshift:** Research the xorshift algorithm and its benefits over LCGs. Implement a xorshift RNG and compare its performance and randomness with an LCG.
+
+- **Mersenne Twister:** Learn about the Mersenne Twister algorithm, its design, and why it is widely used. Use the Mersenne Twister algorithm in your language (most languages have built-in support) and generate a sequence of numbers. Compare its period and randomness with other algorithms.
+
+- **WELL (Well Equidistributed Long-period Linear):** Investigate the WELL algorithm and how it improves on the Mersenne Twister. Implement or use a WELL RNG in your language, if available, and evaluate its performance.
+
+- **CMWC (Complementary Multiply With Carry):** Understand the principles behind CMWC RNGs and their advantages. Write code to generate random numbers using the CMWC method and compare it with other RNGs.
+
+- **KISS64:** Research the KISS (Keep It Simple Stupid) RNG and its components. Implement the KISS64 RNG and analyze its simplicity and effectiveness.
+
+- **Blum-Blum-Shub:** Study the Blum-Blum-Shub cryptographically secure RNG and its reliance on number theory. Implement the Blum-Blum-Shub algorithm and generate a sequence of secure random numbers. Compare its performance with other cryptographic RNGs.
+
+##### Entropy Sources and Good Seeds
+
+- **Identify Entropy Sources:** Research common sources of entropy used for seeding RNGs, such as system clocks, mouse movements, and environmental noise. Explore and document the entropy sources available on your system. Use these sources to seed your RNG and observe the impact on the randomness of generated numbers.
+
+- **Understand Seeding:** Learn the importance of good seeds for RNGs and how poor seeds can lead to predictable outputs. Experiment with different seeds for your RNGs and analyze how the sequences differ. Write code to gather high-quality seeds from various entropy sources.
 
 ### Conditional Statements: Mastering Decision Making
 
@@ -267,12 +309,12 @@ Explore how these types are used in your language and write examples to see thei
 - **Handling Default Cases:** Learn how to handle cases where a value is not matched in any condition. Implement a `default` case or equivalent to catch unmatched values and ensure robust handling of all possible inputs.
 - **Continuing in Other Cases:** Explore how to continue execution in other cases within a `switch` statement. Practice using keywords like `break` or `continue` to control the flow and understand their impact.
 
-#### conditional / ternary
+#### Test-Expressions
 
 - **Conditional Expressions:** Determine if your language supports conditional expressions, such as the ternary operator (`condition ? true_value : false_value`). Write examples to see how they simplify simple conditionals and make your code more concise.
 - **Switch Expressions:** Investigate if your language has a `switch` expression or similar construct for concise multi-condition handling. Practice using it to streamline complex conditional logic.
 
-#### logical operators and short-circuit evaluation
+#### Logical Operators and Short-Circuit Evaluation
 
 - **Operator Precedence:** Learn the precedence of logical condition operators (`&&`, `||`, `!`, etc.) in your language. Write expressions to see how precedence affects evaluation and ensure your conditions are evaluated as intended.
 - **Using Brackets:** Check if brackets are required or recommended to group conditions and clarify precedence. Experiment with different levels of brackets (e.g., `()`, `[]`, `(())`, `[[]]`) and their impact on your code's readability and correctness.
@@ -296,13 +338,13 @@ Explore how these types are used in your language and write examples to see thei
 
 - **Using until:** Find out if your language has an `until` loop construct. If not, implement a workaround using other loop constructs (e.g., `while`). Write examples to simulate `until` loop behavior.
 
-#### head- and foot-controlled-loops
+#### Head- and Foot-Controlled-Loops
 
 - **Difference Between Loops:** Learn the difference between head-controlled loops (e.g., `while`) and foot-controlled loops (e.g., `do-while`).
 - **Implementation:** Write examples of both types of loops to see how they are implemented in your language.
 - **Workarounds:** If your language does not support one of these loops, write code to simulate its behavior using available constructs.
 
-#### loop controls (break/last, continue/next)
+#### Loop Controls (break/last, continue/next)
 
 - **Control Statements:** Determine if your language supports loop control statements such as `break` (to exit the loop) and `continue` (to skip the current iteration and proceed to the next one).
 - **Flow Alteration:** Experiment with these control statements to see how you can alter the flow of a loop. Write examples to test exiting loops early and skipping iterations.
@@ -764,128 +806,389 @@ Explore how these types are used in your language and write examples to see thei
 
 ### Projects: Let's Grow Big
 
-single projects
-multi-interdependent projects
-external libraries
-  - dynamic and static linking
-marshalling
-  - type conversions (bool, string), blittable vs unblittable
-calling conventions
-  - cdecl, pascal, fastcall, stdcall, register
-project customization and build scripts
+#### Single Projects
+
+- **Calculator Project:** Begin by implementing basic operations such as addition, subtraction, multiplication, and division. Enhance your calculator by handling invalid input and supporting more complex expressions. This project reinforces your understanding of basic syntax and logic.
+
+#### Multi-Interdependent Projects
+
+- **to-do list:** Advance to more complex projects with a layered architecture. Separate layers for data access, business logic, and input/output operations.
+
+- **Layered Architecture:** Divide your application into three projects:
+  - **Data Access Layer:** Manages task storage and retrieval.
+  - **Business Logic Layer:** Handles task operations and rules.
+  - **I/O Layer:** Manages user interactions and displays tasks.
+  
+  This structure promotes modularity and maintainability, making it easier to test and update individual components.
+
+#### External Libraries
+
+- **Dynamic and Static Linking:** Understand the differences between dynamic and static linking. Dynamic linking uses external libraries at runtime, while static linking includes the library code within your executable. Practice linking a relevant library both dynamically and statically, and document the performance and memory usage differences.
+
+- **Runtime Importing:** Research how to dynamically load libraries at runtime and how to call their exported functions.
+
+#### Marshalling
+
+- **Type Conversions:** Explore how to convert between different data types during marshalling, such as boolean and string. Write functions to handle these conversions and test them with various inputs to ensure reliability.
+- **Blittable vs. Unblittable Types:** Learn the difference between blittable (directly transferable) and unblittable (require special handling) types. Write code to demonstrate how these types are marshaled differently.
+- **Resource Deallocation:** Understand the importance of proper resource deallocation, especially with unmanaged resources. Implement a project that uses file handles and ensure proper cleanup to prevent memory leaks.
+- **Padding and Alignment:** Investigate how padding and alignment affect data structures. Create a data structure and observe its memory layout. Optimize the structure for performance and memory efficiency.
+
+#### Calling Conventions
+
+- **cdecl, Pascal, fastcall, stdcall, register:** Research these calling conventions and their implications for function calls and parameter passing. Write functions using different conventions (if supported) and observe how they affect stack management and performance.
+
+#### Project-Customization and Build-Scripts
+
+- **Compiler Settings:** Learn to adjust compiler settings to optimize your project for speed, size, or memory usage. Experiment with different compiler flags and settings, measure their impact, and document the best configurations for various scenarios.
+- **Modifying Runtime Behavior:** Explore ways to change runtime behavior through configuration files, environment variables, or runtime flags. Implement a configuration system that allows changes without recompilation, and test different configurations to see their effects.
+- **Build Scripts:** Create build scripts using Shell, Batch, PowerShell, or other command-line tools to automate your workflow. Write comprehensive scripts that compile, link, and package your application. Ensure the scripts are reusable and adaptable to different environments, streamlining your development process.
 
 ### Concurrency: Making The CPU Burn
 
-timers
-  - start, stop, resume, change
-  - interrupting flow or truly parallel
-parallel loops
-  - simd
-  - vectorization
-threads
-  - create, abort, start, resume
-  - thread model
-  - native or fibers
-  - copying existing values
-thread safety
-synchronization
-  - mutex, semaphore, locks, monitors, memorybarriers
-lock-free programming
-  - interlocked anything-pattern
-processes
-  - create or fork, implications on existing variables, list, kill, modify, process tree, affinity, priority
-continuation programming
-task-based programming
-  - graceful cancellation
-  - state-machine
-  - debugging experience
-co-routines
-async streams
-  - foreach async
-reactive programming
-  - collections changed, specialized collection, notifypropertychanged
+#### Timers
+
+- **Basics:** Research how to manage timers in your language. Understand the methods to start, stop, resume, change, and delete timers. Implement a project that uses timers to control the flow of execution.
+- **Flow:** Investigate the whether they are implemented by interrupting the flow of execution or running tasks in parallel. Experiment with both approaches to see how they affect program performance.
+
+#### Parallel Loops
+
+- **Special Syntax:** Explore if your language provides special syntax for parallel loops, such as `Parallel.For`. Write examples to utilize parallel loops and measure performance improvements.
+- **SIMD:** Research Single Instruction, Multiple Data (SIMD) and how it can be used to process data in parallel. Implement a SIMD example to see the performance benefits.
+- **Vectorization:** Learn about vectorization and how it optimizes loops for parallel execution. Write code to automatically or manually vectorize loops.
+- **State:** Understand how state is managed in parallel loops. Write examples to handle state correctly and avoid common pitfalls like race conditions.
+
+#### Threads
+
+- **Basics:** Learn how to create, abort, start, and resume threads in your language. Write examples to manage thread lifecycle effectively.
+- **Thread Model:** Investigate the threading model used by your language. Understand the differences between native threads and fibers. Implement examples to see how your model works.
+- **Existing Values:** Explore if existing values are automatically copied when new threads are created and how to control this behaviour. Write examples to handle data sharing and avoid issues like race conditions.
+
+#### Thread Safety
+
+- **Shared Memory:** Understand the challenges of shared memory in multithreaded programs. Write examples to manage shared memory safely.
+- **Volatile:** Learn if you have some kind of volatile keyword and how it ensures visibility of changes across threads. Implement examples to see how volatile affects program behavior.
+- **Hazards:** Research race conditions and deadlocks. Write examples to detect and resolve these concurrency issues.
+
+#### Synchronization
+
+- **Primitives:** Explore different synchronization primitives such as mutexes, semaphores, locks, monitors, and memory barriers. Write examples to synchronize threads safely and efficiently.
+- **Collections:** Learn about blocking collections and how they facilitate safe communication between threads. Implement examples using blocking collections and find out which are available in your language.
+- **Singletons:** Investigate how to implement a singleton application to ensure only one instance runs. Write examples to enforce single-instance behavior.
+
+#### Lock-Free Programming
+
+- **Why and How:** Research the benefits of lock-free programming and how it can improve performance. Implement lock-free data structures utilizing `Exchange` and `CompareExchange` to understand the principles.
+- **Special Syntax:** Learn about any special syntax your language provides for lock-free programming. Write examples to use these constructs.
+- **Lock-Free Collections:** Explore existing lock-free collections. Implement and test their performance in your projects.
+- **Interlocked Anything-Pattern:** Investigate the interlocked anything-pattern for atomic operations. Write examples to apply this pattern in your code.
+
+#### Processes
+
+- **Duping:** Learn how to create or fork processes. Understand the implications on existing variables and resources. Write examples to manage processes and their resources.
+- **Management:** Research how to list, kill, and manage process trees. Write examples to control processes programmatically.
+- **Processing Power:** Explore how to set process affinity and priority. Write examples to optimize process execution based on system resources.
+- **Not My Memory:** Investigate how to modify process behavior at runtime. Write examples to change process parameters dynamically.
+- **Who Has my Fork:** Learn how to inspect used handles and loaded modules in a process. Write examples to gather and analyze this information.
+- **Let's talk about it:** Explore methods for bi-directional communication between processes. Implement examples to facilitate inter-process communication.
+
+#### Continuation Programming
+
+- **Async and Await:** Do you have async and await keywords? Write examples to implement asynchronous workflows using them to simplify your code.
+- **Alternatives:** Investigate alternative implementations of continuation programming. Write examples to understand different approaches and their trade-offs.
+
+#### Task-Based Programming
+
+- **Cancellation:** Understand how to implement graceful cancellation in task-based programming. Write examples to manage task lifecycles and handle cancellations effectively.
+- **Futures and Promises:** Research futures and promises and how they represent asynchronous computations. Write examples to use them in your projects.
+- **State-Machine:** Learn how the compiler works internally to cover your syntax sugar. Write examples to automate complex task workflows.
+- **Schedulers:** Investigate different types of schedulers and how they manage task execution. Write examples to use custom schedulers for optimized task management.
+- **I/O vs CPU:** Explore the differences between I/O-bound and CPU-bound tasks. Write examples to handle each type efficiently.
+- **Debugging:** Understand the challenges of debugging asynchronous code. Write examples to improve debugging experience and diagnose issues in task-based programs.
+
+#### Co-Routines
+
+- **Workflows:** Research co-routines and how they enable asynchronous workflows. Write examples to implement co-routines.
+
+#### Async Streams
+
+- **async foreach:** Learn about async streams and how to iterate over them. Write examples to process data streams asynchronously.
+
+#### Reactive Programming
+
+- **CollectionChanged:** Investigate reactive programming principles and how to react to changes in collections. Write examples to implement reactive collections.
+- **Specialized Collection:** Explore specialized collections that support reactive programming. Write examples to use these collections in your projects.
+- **NotifyPropertyChanged:** Learn about the NotifyPropertyChanged pattern and how it supports reactive programming. Write examples to implement and use this pattern.
+- **Problems:** Understand the common problems in reactive programming, such as memory leaks and complex dependencies. Massive slowdowns could arise from endlessly notifying changes in a circular manner. Write examples to detect and resolve these issues.
 
 ### Networking: Bridging Digital Realms
 
 text data / text streams
+
   - client/server, encodings, line-breaks
+
 binary data / network streams
+
   - (de-)serialization, checksums
+
 http requests
+
   - get, post, authentication, compressions, headers, cookies, data uris
+
 emails
-  - send, headers, body type
+
+  - smtp send, headers, body type, attachments
+
 xml
+
   - tags, attributes, dom/sax parsing, events, modification, dtd, encoding, validity
+
 json
+
+  - type-safe (de-)serialization
+
 custom serialization
+
+  - needed interfaces and base classes to derive from
+  - implement e.g. messagepack
+  - circular references
+  - null-values and unset values
+  - versioning
+
 network utilities
+
   - ping, dns, ntp
+
 custom protocols
+
   - icmp, igmp, udp
+
 raw sockets
-  - handshake, half-open, adapater bindings
+
+  - handshake, half-open
+  - adapater bindings
+  - packet capturing
+
 databases
-  - mysql, t-sql, nosql, sqlite, adodb, oracle
+
+  - mysql, t-sql, nosql, sqlite
+  - adodb, oracle
+  - crud operations
+  - parameters against sql-injections
+  - calling stored procedures and functions
+  - dealing with auto-generated column values like defaults and auto-incrementation
+  - dealing with foreign keys
+  - triggers
+  - collations
+  - number formats, date and time formats
 
 ### Cryptography: Let me bury that secret
 
-algorithms
+basics
+
+  - Kerckhoffs principle
+  - mono-alphabetic substitution, poly-alpha
+  - one-time-pad
+  - block vs stream
+  - symm vs asymm
+  - public vs private key
+  - designs: subst-perm, feistel network, lai-massey
+  - round keys and their generation
+
 modes of operation
+
+  - ecb, cbc, pcbc, cfb, ofb, ctr, gcm, ccm, xts
+
 padding
+
+  - null-bytes and randomization
+  - ansi x9.23, iso 10126, pkcs#5, pkcs#7, iso/iec 7816-4
+  - ciphertext stealing
+  - residual block termination
+
 block sizes
+
+  - blowfish vs aes -> blocksize matters more
+
 key lengths
 
+  - when key size hurts security
+
+initialization vectors
+
+  - null and random
+  - storage
+  - siv
+
+algorithms
+
+  - rijndael/aes
+  - des/3des
+  - blowfish/twofish
+  - idea
+  - serpent, camelia
+  - kuznyechik
+  - anubis/khazad
+
+chaining
+
+  - aes -> rsa
+
 in-memory
+
   - 512 byte blocks, self-re-encryption
+
 files
 
 text
 
 hashing
 
+  - md5, sha512, whirlpool, ripemd, streebog
+
 key derivation
 
+- pbkdef2
+
 steganography
+
+- store in png and riff pcm wave
+- robustness
 
 ### Compression: Squeezing tiny bits out
 
 formats
 
+- lossy vs lossless
+- rle, huffmann, lz/lzss/lzw/deflate, arithmetic
+- dct vs wavelet
+- psychoacustic and psychovisual models
+- jpg (dct, diagonal re-ordering), mp3 (joining channels, temporal masking), mpeg4 (frame referencing, motion estimation)
+
 in-memory
+
+- speed vs ratio
 
 files
 
+- single file (de-)compression
+
 text
 
+- Burrows–Wheeler transform
+- dictionary sizes
+- probabilistic modelling
+
 archives
+
   - zip, rar, 7zip, tar, gz
   - in-memory extraction of single files
   - recursive (de-)compression
   - modification
   - filesystem rights
 
-### Advanced Topics: Let me find my Wrench inside the Warp-Core
+### Lost Topics: Let me find my Wrench inside the Warp-Core
 
 advanced language features
+
+  - decorators, generators, context and state managers
+  - multiple standard libraries
+
 advanced concepts
+
+  - side-channels, retpoline
+  - speculative execution and security issues
+
 performance optimization
+
+  - micro-op -> when and when not, readability issues, criticial sections, 80/20-rule
+  - how to benchmark (warm-up, release vs debug builds, attached debuggers, iteration count, outliers, multi-threading, sys vs user, profiling, synthetic benchmark)
+  - cpu pipelines, stalling, blocking, refilling
+  - superscalar architectures, instruction level parallelism, data dependencies and hazards, register renaming
+  - the cache, cache sizes and levels, associativity, cache thrashing, data locality, prefetching, alignment
+  - branch prediction, static vs dynamic, conditional moving, branch-free-programming, bit hacks
+  - inlining, dead-code elimination, common subexpressions elimination, constant folding and propagation
+  - profile guided optimization, tiered compilation, deoptimization
+  - loop unrolling, fusion and fission, tiling and blocking, invariant code motion
+  - compiler support, attributes, keywords, preprocessor macros
 
 ## Phase 6 - Auxiliary
 
 ### Practical Application: The World is not enough
 
 ui
+  
+  - supported frameworks
+  - designers
+  - platforms
+  - xml based stuff
+  - mvc, mvp, mvvm
+  - desktop, app, mobile, website, cli
+
 version control
-TDD
+
+  - csv, svn, git, mercurial
+  - gitlab, github, bitbucket
+  - ide, cli and explorer support
+  - committing changes, branching, merging, and resolving conflicts
+  - automatic versioning
+  - build-servers and nightlies
+
+test-driven-development
+
+  - unit-tests, supported frameworks (e.g. nUnit, xUnit, JUnit), ide integration
+  - boundary testing, equivalence classes, code coverage, cyclomatic complexity
+  - red-green-refactor
+
 documentation
+
+  - class diagrams, call hierarchies
+  - doxygen, sphinx, javadoc
+  - setup auto-generation
+
 localization
-resources
+
+  - support
+  - best practices
+  - cultural differencies
+
+resources and assets
+  
+  - application icon
+  - usage
+  - embedding text, images, application configuration
+  - free sources
+  - markets
+
 platforms and architectures
+
+  - portability
+
 public libraries
+
+  - find good stuff
+  - npm, nuget, cpan
+
 open-source
+  
+  - sharing is caring
+  - licenses
+  - contribute
+
 community and ecosystem
+  
+  - get involved
+  - help others
+  - share your experiences and learnings
+  - attend and hold meetups, courses, seminars, panels, conventions
+  - use forums, boards and social media
+  - be friendly
+  
 real-world-problems
+
+  - keep giving yourself new hurdles
+  - don't be evil
+  - make the world a better place
 
 # Points of Interest
 
